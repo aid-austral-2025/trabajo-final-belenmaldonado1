@@ -1,11 +1,11 @@
-# Lectura de datos año 2015 ----------------------------------------------------
+# Lectura de datos año 2021 ----------------------------------------------------
 
-archivos_2015 <- list.files(
+archivos_2021 <- list.files(
   path = "Datos crudos/", 
-  pattern = "^2015.*\\.csv$",
+  pattern = "^2021.*\\.csv$",
   full.names = TRUE)
 
-datos_2015 <- archivos_2015 %>%
+datos_2021 <- archivos_2021 %>%
   map_dfr(~ read_delim(file = .x,
                        delim = ";",
                        locale = locale(encoding = "UTF-16LE"),
@@ -28,21 +28,21 @@ datos_2015 <- archivos_2015 %>%
                                         `ES FINAL` = col_character(),
                                         `COSECHA` = col_character())))
 
-datos_2015 <- datos_2015 %>% 
+datos_2021 <- datos_2021 %>% 
   select(-`CALIDAD ADICIONAL`,
          -`NRO INSTANCIA OPERACION`,
          -`...21`)
 
 # Transformaciones para las columnas que necesito en formato fecha -------------
 
-datos_2015$`FECHA OPERACION` <- as.Date(dmy_hms(datos_2015$`FECHA OPERACION`))
-datos_2015$`FECHA CONCERTACION` <- as.Date(dmy_hms(datos_2015$`FECHA CONCERTACION`))
-datos_2015$`FECHA ENTR. DESDE` <- as.Date(dmy_hms(datos_2015$`FECHA ENTR. DESDE`))
-datos_2015$`FECHA ENTR. HASTA` <- as.Date(dmy_hms(datos_2015$`FECHA ENTR. HASTA`))
+datos_2021$`FECHA OPERACION` <- as.Date(dmy_hms(datos_2021$`FECHA OPERACION`))
+datos_2021$`FECHA CONCERTACION` <- as.Date(dmy_hms(datos_2021$`FECHA CONCERTACION`))
+datos_2021$`FECHA ENTR. DESDE` <- as.Date(dmy_hms(datos_2021$`FECHA ENTR. DESDE`))
+datos_2021$`FECHA ENTR. HASTA` <- as.Date(dmy_hms(datos_2021$`FECHA ENTR. HASTA`))
 
 # Renombrar columnas -----------------------------------------------------------
 
-datos_2015 <- datos_2015 %>% 
+datos_2021 <- datos_2021 %>% 
   rename(FECHA_OPERACION = `FECHA OPERACION`,
          FECHA_CONCERTACION = `FECHA CONCERTACION`,
          TONELADAS = `CANT. (TN)`,
@@ -55,8 +55,46 @@ datos_2015 <- datos_2015 %>%
          ENTREGA_HASTA = `FECHA ENTR. HASTA`,
          CONDICION_PAGO = `CONDICION PAGO`,
          ES_FINAL = `ES FINAL`)
-                            
-                            
-                            
-                            
-                            
+
+# Agregar columnas que necesito después ----------------------------------------
+
+datos_2021 <- datos_2021 %>% 
+  mutate(ANIO_OPERACION = year(FECHA_OPERACION),
+         MES_OPERACION = month(FECHA_OPERACION),
+         DIA_OPERACION = day(FECHA_OPERACION),
+         ANIO_CONCERTACION = year(FECHA_CONCERTACION),
+         MES_CONCERTACION = month(FECHA_CONCERTACION),
+         DIA_CONCERTACION = day(FECHA_CONCERTACION),
+         ANIO_ENTREGA_DESDE = year(ENTREGA_DESDE),
+         MES_ENTREGA_DESDE = month(ENTREGA_DESDE),
+         DIA_ENTREGA_DESDE = day(ENTREGA_DESDE),
+         ANIO_ENTREGA_HASTA = year(ENTREGA_HASTA),
+         MES_ENTREGA_HASTA = month(ENTREGA_HASTA),
+         DIA_ENTREGA_HASTA = day(ENTREGA_HASTA)) %>% 
+  select(FECHA_OPERACION,
+         ANIO_OPERACION,
+         MES_OPERACION,
+         DIA_OPERACION,
+         FECHA_CONCERTACION,
+         MES_CONCERTACION,
+         DIA_CONCERTACION,
+         OPERACION,
+         TIPO,
+         PRECIO,
+         PRODUCTO,
+         TONELADAS,
+         CALIDAD,
+         PROCEDENCIA_PROVINCIA,
+         PROCEDENCIA_LOCALIDAD,
+         MONEDA,
+         PRECIO_TN,
+         ENTREGA,
+         ENTREGA_DESDE,
+         ANIO_ENTREGA_DESDE,
+         MES_ENTREGA_DESDE,
+         DIA_ENTREGA_DESDE,
+         ENTREGA_HASTA,
+         ANIO_ENTREGA_HASTA,
+         MES_ENTREGA_HASTA,
+         DIA_ENTREGA_HASTA,
+         everything())
