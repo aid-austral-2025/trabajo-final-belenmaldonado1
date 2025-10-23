@@ -8,7 +8,9 @@ archivos_2019 <- list.files(
 datos_2019 <- archivos_2019 %>%
   map_dfr(~ read_delim(file = .x,
                        delim = ";",
-                       locale = locale(encoding = "UTF-16LE"),
+                       locale = locale(encoding = "UTF-16LE",
+                                       decimal_mark = ",",
+                                       grouping_mark = "."),
                        col_types = cols(`FECHA OPERACION` = col_character(),     # leo las fechas como caracter pq no las reconoce como fecha
                                         `FECHA CONCERTACION` = col_character(),
                                         OPERACION = col_character(),
@@ -61,6 +63,7 @@ datos_2019 <- datos_2019 %>%
 datos_2019 <- datos_2019 %>% 
   mutate(ANIO_OPERACION = year(FECHA_OPERACION),
          MES_OPERACION = month(FECHA_OPERACION),
+         SEMANA_OPERACION = week(floor_date(FECHA_OPERACION, unit = "week", week_start = 1)), # separa las semanas tomando los lunes como primer día
          DIA_OPERACION = day(FECHA_OPERACION),
          ANIO_CONCERTACION = year(FECHA_CONCERTACION),
          MES_CONCERTACION = month(FECHA_CONCERTACION),
@@ -74,8 +77,10 @@ datos_2019 <- datos_2019 %>%
   select(FECHA_OPERACION,
          ANIO_OPERACION,
          MES_OPERACION,
+         SEMANA_OPERACION,
          DIA_OPERACION,
          FECHA_CONCERTACION,
+         ANIO_CONCERTACION,
          MES_CONCERTACION,
          DIA_CONCERTACION,
          OPERACION,
@@ -98,3 +103,10 @@ datos_2019 <- datos_2019 %>%
          MES_ENTREGA_HASTA,
          DIA_ENTREGA_HASTA,
          everything())
+
+# Corrijo las semanas pq los primeros días del año me los toma como la última semana del año anterior
+
+datos_2019 <- datos_2019 %>%    
+  mutate(SEMANA_OPERACION = case_when(SEMANA_OPERACION == 53     
+                                      & FECHA_OPERACION <= as.Date("2019-01-06") ~ 1,
+                                      TRUE ~ SEMANA_OPERACION + 1))
