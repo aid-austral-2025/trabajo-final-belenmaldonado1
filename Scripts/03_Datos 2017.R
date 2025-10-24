@@ -110,3 +110,8 @@ datos_2017 <- datos_2017 %>%
   mutate(SEMANA_OPERACION = case_when(SEMANA_OPERACION == 52     
                                       & FECHA_OPERACION == as.Date("2017-01-01") ~ 1,
                                       TRUE ~ SEMANA_OPERACION))
+
+# Filtro de datos con fecha pq hay datos mal cargados --------------------------
+
+datos_2017 <- datos_2017 %>%
+  filter(!is.na(FECHA_OPERACION))

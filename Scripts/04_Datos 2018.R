@@ -103,3 +103,8 @@ datos_2018 <- datos_2018 %>%
          MES_ENTREGA_HASTA,
          DIA_ENTREGA_HASTA,
          everything())
+
+# Filtro de datos con fecha pq hay datos mal cargados --------------------------
+
+datos_2018 <- datos_2018 %>%
+  filter(!is.na(FECHA_OPERACION))

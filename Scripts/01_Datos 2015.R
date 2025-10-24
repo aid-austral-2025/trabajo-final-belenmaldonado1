@@ -110,9 +110,7 @@ datos_2015 <- datos_2015 %>%
   mutate(SEMANA_OPERACION = case_when(SEMANA_OPERACION == 52     
                                       & FECHA_OPERACION <= as.Date("2015-01-05") ~ 1,
                                       TRUE ~ SEMANA_OPERACION + 1))
-  
-  
-  
+
          
 
 
