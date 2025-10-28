@@ -1,5 +1,5 @@
 # Pricing diario de granos 2015 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2015 <- datos_2015 %>% 
   filter(PRODUCTO == "SOJA",
@@ -49,7 +49,7 @@ pricing_diario_soja_2015 <- datos_2015 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2015 <- datos_2015 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -99,7 +99,7 @@ pricing_diario_maiz_2015 <- datos_2015 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2015 <- datos_2015 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -149,7 +149,7 @@ pricing_diario_trigo_2015 <- datos_2015 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2015 <- datos_2015 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -199,7 +199,7 @@ pricing_diario_girasol_2015 <- datos_2015 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2015 <- datos_2015 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -249,7 +249,7 @@ pricing_diario_cebada_2015 <- datos_2015 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2015 <- datos_2015 %>% 
   filter(PRODUCTO == "SORGO",
@@ -299,7 +299,7 @@ pricing_diario_sorgo_2015 <- datos_2015 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2015$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2015$PRODUCTO <- "GIRASOL"
@@ -330,7 +330,7 @@ pricing_diario_total_2015 <- pricing_diario_total_2015 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2015, "Datos limpios/Pricing diario/2015/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2015, "Datos limpios/Pricing diario/2015/Girasol.xlsx")
@@ -341,7 +341,7 @@ write_xlsx(pricing_diario_trigo_2015, "Datos limpios/Pricing diario/2015/Trigo.x
 write_xlsx(pricing_diario_total_2015, "Datos limpios/Pricing diario/2015/Total.xlsx")
 
 # Pricing diario de granos 2016 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2016 <- datos_2016 %>% 
   filter(PRODUCTO == "SOJA",
@@ -391,7 +391,7 @@ pricing_diario_soja_2016 <- datos_2016 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2016 <- datos_2016 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -441,7 +441,7 @@ pricing_diario_maiz_2016 <- datos_2016 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2016 <- datos_2016 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -491,7 +491,7 @@ pricing_diario_trigo_2016 <- datos_2016 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2016 <- datos_2016 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -541,7 +541,7 @@ pricing_diario_girasol_2016 <- datos_2016 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2016 <- datos_2016 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -591,7 +591,7 @@ pricing_diario_cebada_2016 <- datos_2016 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2016 <- datos_2016 %>% 
   filter(PRODUCTO == "SORGO",
@@ -641,7 +641,7 @@ pricing_diario_sorgo_2016 <- datos_2016 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2016$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2016$PRODUCTO <- "GIRASOL"
@@ -672,7 +672,7 @@ pricing_diario_total_2016 <- pricing_diario_total_2016 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2016, "Datos limpios/Pricing diario/2016/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2016, "Datos limpios/Pricing diario/2016/Girasol.xlsx")
@@ -683,7 +683,7 @@ write_xlsx(pricing_diario_trigo_2016, "Datos limpios/Pricing diario/2016/Trigo.x
 write_xlsx(pricing_diario_total_2016, "Datos limpios/Pricing diario/2016/Total.xlsx")
 
 # Pricing diario de granos 2017 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2017 <- datos_2017 %>% 
   filter(PRODUCTO == "SOJA",
@@ -733,7 +733,7 @@ pricing_diario_soja_2017 <- datos_2017 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2017 <- datos_2017 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -783,7 +783,7 @@ pricing_diario_maiz_2017 <- datos_2017 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2017 <- datos_2017 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -833,7 +833,7 @@ pricing_diario_trigo_2017 <- datos_2017 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2017 <- datos_2017 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -883,7 +883,7 @@ pricing_diario_girasol_2017 <- datos_2017 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2017 <- datos_2017 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -933,7 +933,7 @@ pricing_diario_cebada_2017 <- datos_2017 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2017 <- datos_2017 %>% 
   filter(PRODUCTO == "SORGO",
@@ -983,7 +983,7 @@ pricing_diario_sorgo_2017 <- datos_2017 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2017$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2017$PRODUCTO <- "GIRASOL"
@@ -1014,7 +1014,7 @@ pricing_diario_total_2017 <- pricing_diario_total_2017 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2017, "Datos limpios/Pricing diario/2017/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2017, "Datos limpios/Pricing diario/2017/Girasol.xlsx")
@@ -1025,7 +1025,7 @@ write_xlsx(pricing_diario_trigo_2017, "Datos limpios/Pricing diario/2017/Trigo.x
 write_xlsx(pricing_diario_total_2017, "Datos limpios/Pricing diario/2017/Total.xlsx")
 
 # Pricing diario de granos 2018 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2018 <- datos_2018 %>% 
   filter(PRODUCTO == "SOJA",
@@ -1075,7 +1075,7 @@ pricing_diario_soja_2018 <- datos_2018 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2018 <- datos_2018 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -1125,7 +1125,7 @@ pricing_diario_maiz_2018 <- datos_2018 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2018 <- datos_2018 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -1175,7 +1175,7 @@ pricing_diario_trigo_2018 <- datos_2018 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2018 <- datos_2018 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -1225,7 +1225,7 @@ pricing_diario_girasol_2018 <- datos_2018 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2018 <- datos_2018 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -1275,7 +1275,7 @@ pricing_diario_cebada_2018 <- datos_2018 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2018 <- datos_2018 %>% 
   filter(PRODUCTO == "SORGO",
@@ -1325,7 +1325,7 @@ pricing_diario_sorgo_2018 <- datos_2018 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2018$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2018$PRODUCTO <- "GIRASOL"
@@ -1356,7 +1356,7 @@ pricing_diario_total_2018 <- pricing_diario_total_2018 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2018, "Datos limpios/Pricing diario/2018/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2018, "Datos limpios/Pricing diario/2018/Girasol.xlsx")
@@ -1367,7 +1367,7 @@ write_xlsx(pricing_diario_trigo_2018, "Datos limpios/Pricing diario/2018/Trigo.x
 write_xlsx(pricing_diario_total_2018, "Datos limpios/Pricing diario/2018/Total.xlsx")
 
 # Pricing diario de granos 2019 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2019 <- datos_2019 %>% 
   filter(PRODUCTO == "SOJA",
@@ -1417,7 +1417,7 @@ pricing_diario_soja_2019 <- datos_2019 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2019 <- datos_2019 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -1467,7 +1467,7 @@ pricing_diario_maiz_2019 <- datos_2019 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2019 <- datos_2019 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -1517,7 +1517,7 @@ pricing_diario_trigo_2019 <- datos_2019 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2019 <- datos_2019 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -1567,7 +1567,7 @@ pricing_diario_girasol_2019 <- datos_2019 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2019 <- datos_2019 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -1617,7 +1617,7 @@ pricing_diario_cebada_2019 <- datos_2019 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2019 <- datos_2019 %>% 
   filter(PRODUCTO == "SORGO",
@@ -1667,7 +1667,7 @@ pricing_diario_sorgo_2019 <- datos_2019 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2019$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2019$PRODUCTO <- "GIRASOL"
@@ -1698,7 +1698,7 @@ pricing_diario_total_2019 <- pricing_diario_total_2019 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2019, "Datos limpios/Pricing diario/2019/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2019, "Datos limpios/Pricing diario/2019/Girasol.xlsx")
@@ -1709,7 +1709,7 @@ write_xlsx(pricing_diario_trigo_2019, "Datos limpios/Pricing diario/2019/Trigo.x
 write_xlsx(pricing_diario_total_2019, "Datos limpios/Pricing diario/2019/Total.xlsx")
 
 # Pricing diario de granos 2020 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2020 <- datos_2020 %>% 
   filter(PRODUCTO == "SOJA",
@@ -1759,7 +1759,7 @@ pricing_diario_soja_2020 <- datos_2020 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2020 <- datos_2020 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -1809,7 +1809,7 @@ pricing_diario_maiz_2020 <- datos_2020 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2020 <- datos_2020 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -1859,7 +1859,7 @@ pricing_diario_trigo_2020 <- datos_2020 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2020 <- datos_2020 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -1909,7 +1909,7 @@ pricing_diario_girasol_2020 <- datos_2020 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2020 <- datos_2020 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -1959,7 +1959,7 @@ pricing_diario_cebada_2020 <- datos_2020 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2020 <- datos_2020 %>% 
   filter(PRODUCTO == "SORGO",
@@ -2009,7 +2009,7 @@ pricing_diario_sorgo_2020 <- datos_2020 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2020$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2020$PRODUCTO <- "GIRASOL"
@@ -2040,7 +2040,7 @@ pricing_diario_total_2020 <- pricing_diario_total_2020 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2020, "Datos limpios/Pricing diario/2020/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2020, "Datos limpios/Pricing diario/2020/Girasol.xlsx")
@@ -2051,7 +2051,7 @@ write_xlsx(pricing_diario_trigo_2020, "Datos limpios/Pricing diario/2020/Trigo.x
 write_xlsx(pricing_diario_total_2020, "Datos limpios/Pricing diario/2020/Total.xlsx")
 
 # Pricing diario de granos 2021 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2021 <- datos_2021 %>% 
   filter(PRODUCTO == "SOJA",
@@ -2101,7 +2101,7 @@ pricing_diario_soja_2021 <- datos_2021 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2021 <- datos_2021 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -2151,7 +2151,7 @@ pricing_diario_maiz_2021 <- datos_2021 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2021 <- datos_2021 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -2201,7 +2201,7 @@ pricing_diario_trigo_2021 <- datos_2021 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2021 <- datos_2021 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -2251,7 +2251,7 @@ pricing_diario_girasol_2021 <- datos_2021 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2021 <- datos_2021 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -2301,7 +2301,7 @@ pricing_diario_cebada_2021 <- datos_2021 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2021 <- datos_2021 %>% 
   filter(PRODUCTO == "SORGO",
@@ -2351,7 +2351,7 @@ pricing_diario_sorgo_2021 <- datos_2021 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2021$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2021$PRODUCTO <- "GIRASOL"
@@ -2382,7 +2382,7 @@ pricing_diario_total_2021 <- pricing_diario_total_2021 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2021, "Datos limpios/Pricing diario/2021/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2021, "Datos limpios/Pricing diario/2021/Girasol.xlsx")
@@ -2393,7 +2393,7 @@ write_xlsx(pricing_diario_trigo_2021, "Datos limpios/Pricing diario/2021/Trigo.x
 write_xlsx(pricing_diario_total_2021, "Datos limpios/Pricing diario/2021/Total.xlsx")
 
 # Pricing diario de granos 2022 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2022 <- datos_2022 %>% 
   filter(PRODUCTO == "SOJA",
@@ -2443,7 +2443,7 @@ pricing_diario_soja_2022 <- datos_2022 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2022 <- datos_2022 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -2493,7 +2493,7 @@ pricing_diario_maiz_2022 <- datos_2022 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2022 <- datos_2022 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -2543,7 +2543,7 @@ pricing_diario_trigo_2022 <- datos_2022 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2022 <- datos_2022 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -2593,7 +2593,7 @@ pricing_diario_girasol_2022 <- datos_2022 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2022 <- datos_2022 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -2643,7 +2643,7 @@ pricing_diario_cebada_2022 <- datos_2022 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2022 <- datos_2022 %>% 
   filter(PRODUCTO == "SORGO",
@@ -2693,7 +2693,7 @@ pricing_diario_sorgo_2022 <- datos_2022 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2022$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2022$PRODUCTO <- "GIRASOL"
@@ -2724,7 +2724,7 @@ pricing_diario_total_2022 <- pricing_diario_total_2022 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2022, "Datos limpios/Pricing diario/2022/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2022, "Datos limpios/Pricing diario/2022/Girasol.xlsx")
@@ -2735,7 +2735,7 @@ write_xlsx(pricing_diario_trigo_2022, "Datos limpios/Pricing diario/2022/Trigo.x
 write_xlsx(pricing_diario_total_2022, "Datos limpios/Pricing diario/2022/Total.xlsx")
 
 # Pricing diario de granos 2023 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2023 <- datos_2023 %>% 
   filter(PRODUCTO == "SOJA",
@@ -2785,7 +2785,7 @@ pricing_diario_soja_2023 <- datos_2023 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2023 <- datos_2023 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -2835,7 +2835,7 @@ pricing_diario_maiz_2023 <- datos_2023 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2023 <- datos_2023 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -2885,7 +2885,7 @@ pricing_diario_trigo_2023 <- datos_2023 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2023 <- datos_2023 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -2935,7 +2935,7 @@ pricing_diario_girasol_2023 <- datos_2023 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2023 <- datos_2023 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -2985,7 +2985,7 @@ pricing_diario_cebada_2023 <- datos_2023 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2023 <- datos_2023 %>% 
   filter(PRODUCTO == "SORGO",
@@ -3035,7 +3035,7 @@ pricing_diario_sorgo_2023 <- datos_2023 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2023$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2023$PRODUCTO <- "GIRASOL"
@@ -3066,7 +3066,7 @@ pricing_diario_total_2023 <- pricing_diario_total_2023 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos 
+## Guardo los datos ------------------------------------------------------------ 
 
 write_xlsx(pricing_diario_cebada_2023, "Datos limpios/Pricing diario/2023/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2023, "Datos limpios/Pricing diario/2023/Girasol.xlsx")
@@ -3077,7 +3077,7 @@ write_xlsx(pricing_diario_trigo_2023, "Datos limpios/Pricing diario/2023/Trigo.x
 write_xlsx(pricing_diario_total_2023, "Datos limpios/Pricing diario/2023/Total.xlsx")
 
 # Pricing diario de granos 2024 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2024 <- datos_2024 %>% 
   filter(PRODUCTO == "SOJA",
@@ -3127,7 +3127,7 @@ pricing_diario_soja_2024 <- datos_2024 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2024 <- datos_2024 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -3177,7 +3177,7 @@ pricing_diario_maiz_2024 <- datos_2024 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2024 <- datos_2024 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -3227,7 +3227,7 @@ pricing_diario_trigo_2024 <- datos_2024 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2024 <- datos_2024 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -3277,7 +3277,7 @@ pricing_diario_girasol_2024 <- datos_2024 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2024 <- datos_2024 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -3327,7 +3327,7 @@ pricing_diario_cebada_2024 <- datos_2024 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2024 <- datos_2024 %>% 
   filter(PRODUCTO == "SORGO",
@@ -3377,7 +3377,7 @@ pricing_diario_sorgo_2024 <- datos_2024 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2024$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2024$PRODUCTO <- "GIRASOL"
@@ -3408,7 +3408,7 @@ pricing_diario_total_2024 <- pricing_diario_total_2024 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos
+## Guardo los datos ------------------------------------------------------------
 
 write_xlsx(pricing_diario_cebada_2024, "Datos limpios/Pricing diario/2024/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2024, "Datos limpios/Pricing diario/2024/Girasol.xlsx")
@@ -3419,7 +3419,7 @@ write_xlsx(pricing_diario_trigo_2024, "Datos limpios/Pricing diario/2024/Trigo.x
 write_xlsx(pricing_diario_total_2024, "Datos limpios/Pricing diario/2024/Total.xlsx")
 
 # Pricing diario de granos 2025 ------------------------------------------------
-## SOJA
+## SOJA ------------------------------------------------------------------------
 
 pricing_diario_soja_2025 <- datos_2025 %>% 
   filter(PRODUCTO == "SOJA",
@@ -3469,7 +3469,7 @@ pricing_diario_soja_2025 <- datos_2025 %>%
          FIJACIONES,
          TOTAL)
 
-## MAÍZ
+## MAIZ ------------------------------------------------------------------------
 
 pricing_diario_maiz_2025 <- datos_2025 %>% 
   filter(PRODUCTO == "MAIZ",
@@ -3519,7 +3519,7 @@ pricing_diario_maiz_2025 <- datos_2025 %>%
          FIJACIONES,
          TOTAL)
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 
 pricing_diario_trigo_2025 <- datos_2025 %>% 
   filter(PRODUCTO %in% c("TRIGO PAN", "TRIGO CAND."),
@@ -3569,7 +3569,7 @@ pricing_diario_trigo_2025 <- datos_2025 %>%
          FIJACIONES,
          TOTAL)
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 
 pricing_diario_girasol_2025 <- datos_2025 %>% 
   filter(PRODUCTO == "GIRASOL",
@@ -3619,7 +3619,7 @@ pricing_diario_girasol_2025 <- datos_2025 %>%
          FIJACIONES,
          TOTAL)
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 
 pricing_diario_cebada_2025 <- datos_2025 %>% 
   filter(PRODUCTO %in% c("CEBADA CERV.", "CEBADA FORR."),
@@ -3669,7 +3669,7 @@ pricing_diario_cebada_2025 <- datos_2025 %>%
          FIJACIONES,
          TOTAL)
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 
 pricing_diario_sorgo_2025 <- datos_2025 %>% 
   filter(PRODUCTO == "SORGO",
@@ -3719,7 +3719,7 @@ pricing_diario_sorgo_2025 <- datos_2025 %>%
          FIJACIONES,
          TOTAL)
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 
 pricing_diario_cebada_2025$PRODUCTO <- "CEBADA"
 pricing_diario_girasol_2025$PRODUCTO <- "GIRASOL"
@@ -3750,7 +3750,7 @@ pricing_diario_total_2025 <- pricing_diario_total_2025 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
-# Guardo los datos
+## Guardo los datos ------------------------------------------------------------
 
 write_xlsx(pricing_diario_cebada_2025, "Datos limpios/Pricing diario/2025/Cebada.xlsx")
 write_xlsx(pricing_diario_girasol_2025, "Datos limpios/Pricing diario/2025/Girasol.xlsx")
@@ -3762,7 +3762,7 @@ write_xlsx(pricing_diario_total_2025, "Datos limpios/Pricing diario/2025/Total.x
 
 # Histórico --------------------------------------------------------------------
 
-## SOJA
+## SOJA ------------------------------------------------------------------------
 pricing_diario_historico_soja <- bind_rows(pricing_diario_soja_2015,
                                            pricing_diario_soja_2016,
                                            pricing_diario_soja_2017,
@@ -3776,9 +3776,9 @@ pricing_diario_historico_soja <- bind_rows(pricing_diario_soja_2015,
                                            pricing_diario_soja_2025)
 
 write_xlsx(pricing_diario_historico_soja,
-           "Datos limpios/Pricing diario/Pricing diario histórico_Soja.xlsx")
+           "Datos limpios/Pricing diario/Histórico/Soja.xlsx")
 
-## MAIZ
+## MAIZ ------------------------------------------------------------------------
 pricing_diario_historico_maiz <- bind_rows(pricing_diario_maiz_2015,
                                            pricing_diario_maiz_2016,
                                            pricing_diario_maiz_2017,
@@ -3792,9 +3792,9 @@ pricing_diario_historico_maiz <- bind_rows(pricing_diario_maiz_2015,
                                            pricing_diario_maiz_2025)
 
 write_xlsx(pricing_diario_historico_maiz,
-           "Datos limpios/Pricing diario/Pricing diario histórico_Maiz.xlsx")
+           "Datos limpios/Pricing diario/Histórico/Maiz.xlsx")
 
-## TRIGO
+## TRIGO -----------------------------------------------------------------------
 pricing_diario_historico_trigo <- bind_rows(pricing_diario_trigo_2015,
                                             pricing_diario_trigo_2016,
                                             pricing_diario_trigo_2017,
@@ -3808,9 +3808,9 @@ pricing_diario_historico_trigo <- bind_rows(pricing_diario_trigo_2015,
                                             pricing_diario_trigo_2025)
 
 write_xlsx(pricing_diario_historico_trigo,
-           "Datos limpios/Pricing diario/Pricing diario histórico_Trigo.xlsx")
+           "Datos limpios/Pricing diario/Histórico/Trigo.xlsx")
 
-## GIRASOL
+## GIRASOL ---------------------------------------------------------------------
 pricing_diario_historico_girasol <- bind_rows(pricing_diario_girasol_2015,
                                               pricing_diario_girasol_2016,
                                               pricing_diario_girasol_2017,
@@ -3824,9 +3824,9 @@ pricing_diario_historico_girasol <- bind_rows(pricing_diario_girasol_2015,
                                               pricing_diario_girasol_2025)
 
 write_xlsx(pricing_diario_historico_girasol,
-           "Datos limpios/Pricing diario/Pricing diario histórico_Girasol.xlsx")
+           "Datos limpios/Pricing diario/Histórico/Girasol.xlsx")
 
-## CEBADA
+## CEBADA ----------------------------------------------------------------------
 pricing_diario_historico_cebada <- bind_rows(pricing_diario_cebada_2015,
                                              pricing_diario_cebada_2016,
                                              pricing_diario_cebada_2017,
@@ -3840,10 +3840,10 @@ pricing_diario_historico_cebada <- bind_rows(pricing_diario_cebada_2015,
                                              pricing_diario_cebada_2025)
 
 write_xlsx(pricing_diario_historico_cebada,
-           "Datos limpios/Pricing diario/Pricing diario histórico_Cebada.xlsx")
+           "Datos limpios/Pricing diario/Histórico/Cebada.xlsx")
 
 
-## SORGO
+## SORGO -----------------------------------------------------------------------
 pricing_diario_historico_sorgo <- bind_rows(pricing_diario_sorgo_2015,
                                             pricing_diario_sorgo_2016,
                                             pricing_diario_sorgo_2017,
@@ -3857,9 +3857,9 @@ pricing_diario_historico_sorgo <- bind_rows(pricing_diario_sorgo_2015,
                                             pricing_diario_sorgo_2025)
 
 write_xlsx(pricing_diario_historico_sorgo,
-           "Datos limpios/Pricing diario/Pricing diario histórico_Sorgo.xlsx")
+           "Datos limpios/Pricing diario/Histórico/Sorgo.xlsx")
 
-## TOTAL
+## TOTAL -----------------------------------------------------------------------
 pricing_diario_historico <- bind_rows(pricing_diario_total_2015,
                                       pricing_diario_total_2016,
                                       pricing_diario_total_2017,
@@ -3872,4 +3872,4 @@ pricing_diario_historico <- bind_rows(pricing_diario_total_2015,
                                       pricing_diario_total_2024,
                                       pricing_diario_total_2025)
 
-write_xlsx(pricing_diario_historico, "Datos limpios/Pricing diario/Pricing diario histórico.xlsx")
+write_xlsx(pricing_diario_historico, "Datos limpios/Pricing diario/Histórico/Pricing diario histórico.xlsx")
