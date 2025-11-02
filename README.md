@@ -13,9 +13,24 @@ conforman el mercado físico.
 
 ### Fuente de datos
 
-* **Origen:** los datos mensuales se obtienen de la página web de [SIO Granos](https://www.
-siogranos.com.ar/Consulta_publica/operaciones_informadas_exportar.aspx), seleccionando en 
-"Fecha Declaración en SioGranos" el primer y último día del mes a exportar.
+* **Origen:** los datos mensuales se obtienen de la página web de [SIO Granos](https://www.siogranos.com.ar/Consulta_publica/operaciones_informadas_exportar.aspx),
+seleccionando en "Fecha Declaración en SioGranos" el primer y último día del mes a exportar.
 * **Frecuencia de actualización:** los datos se actualizarán semanalmente, incorporando información
 del mes en curso y actualizando los dos meses previos, ya que la información reciente puede 
 sufrir ligeras modificaciones.
+
+## Proceso de actualización
+
+1. Paso 1: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos".
+2. Paso 2: correr los scripts **en el orden que están enumerados**.
+3. Paso 3: 
+
+
+## Salidas
+
+* Archivos generados: se generan archivos sobre el **pricing de granos diario y semanal**, los cuales
+se exportan en formato **xlsx** en la carpeta "Datos limpios". Los mismos se separan en carpetas por
+año, incluyendo archivos históricos para cada grano. Para calcular el pricing, se tienen en cuenta 
+únicamente las operaciones finales.
+* Gráficos:
+
