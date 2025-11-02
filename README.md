@@ -21,9 +21,9 @@ sufrir ligeras modificaciones.
 
 ## Proceso de actualización
 
-1. Paso 1: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos".
-2. Paso 2: correr los scripts **en el orden que están enumerados**.
-3. Paso 3: 
+Paso 1: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos".
+Paso 2: correr los scripts **en el orden que están enumerados**.
+Paso 3: 
 
 
 ## Salidas
