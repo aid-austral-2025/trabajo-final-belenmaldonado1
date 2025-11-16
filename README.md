@@ -23,15 +23,15 @@ los datos del origen de la producción, se obtienen de la página de
 [SAGyP](https://datosestimaciones.magyp.gob.ar/reportes.php?reporte=Estimaciones).
 * **Frecuencia de actualización:** los datos de pricing se actualizarán semanalmente, incorporando información
 del mes en curso y actualizando los dos meses previos, ya que la información reciente puede sufrir ligeras 
-modificaciones. Los datos de estimaciones de actualizan cada un mes, para contemplar la actualización de las
-estimaciones.
+modificaciones. Los datos de estimaciones se actualizarán cada un mes, para incorporar las nuevas estimaciones 
+disponibles.
 
 ## Proceso de actualización
 
-Paso 1: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos", en el mismo formato
+- **Paso 1**: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos", en el mismo formato
 de los demás meses.
-Paso 2: cargar los datos provenientes de la página de SAGyP en la carpeta "Mapa" con el mismo nombre.
-Paso 3: correr los scripts **en el orden que están enumerados**.
+- **Paso 2**: cargar los datos provenientes de la página de SAGyP en la carpeta "Mapa" con el mismo nombre.
+- **Paso 3**: correr los scripts **en el orden que están enumerados**.
 
 
 ## Salidas
@@ -41,7 +41,6 @@ se exportan en formato **xlsx** en la carpeta "Datos limpios". Los mismos se sep
 año, incluyendo archivos históricos para cada grano. Para calcular el pricing, se tienen en cuenta 
 únicamente las operaciones finales.
 * Tablero: se genera un tablero shiny para monitorear los datos de pricing y origen de la producción, donde
-se pueden observar tanto datos números como gráficos de seguimiento.
+se pueden observar tanto datos númericos como gráficos de seguimiento.
 
 ***ADVERTENCIA***: la carga del mapa en shiny funciona lento por la gran cantidad de departamentos.
-
