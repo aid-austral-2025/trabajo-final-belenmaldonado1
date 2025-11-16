@@ -1,6 +1,5 @@
 # Pricing diario de granos 2015 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
-
 pricing_diario_soja_2015 <- datos_2015 %>% 
   filter(PRODUCTO == "SOJA",
          ES_FINAL == "SI") %>% 
@@ -50,7 +49,6 @@ pricing_diario_soja_2015 <- datos_2015 %>%
          TOTAL)
 
 ## MAIZ ------------------------------------------------------------------------
-
 pricing_diario_maiz_2015 <- datos_2015 %>% 
   filter(PRODUCTO == "MAIZ",
          ES_FINAL == "SI") %>% 
@@ -329,6 +327,14 @@ pricing_diario_total_2015 <- pricing_diario_total_2015 %>%
          TRIGO = if_else(is.na(TRIGO), 0, TRIGO),
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
+
+saveRDS(pricing_diario_soja_2015, "Shiny/Data/pricing_diario_soja_2015.rds")
+saveRDS(pricing_diario_maiz_2015, "Shiny/Data/pricing_diario_maiz_2015.rds")
+saveRDS(pricing_diario_trigo_2015, "Shiny/Data/pricing_diario_trigo_2015.rds")
+saveRDS(pricing_diario_girasol_2015, "Shiny/Data/pricing_diario_girasol_2015.rds")
+saveRDS(pricing_diario_sorgo_2015, "Shiny/Data/pricing_diario_sorgo_2015.rds")
+saveRDS(pricing_diario_cebada_2015, "Shiny/Data/pricing_diario_cebada_2015.rds")
+saveRDS(pricing_diario_total_2015, "Shiny/Data/pricing_diario_total_2015.rds")
 
 # Pricing diario de granos 2016 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -662,6 +668,13 @@ pricing_diario_total_2016 <- pricing_diario_total_2016 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2016, "Shiny/Data/pricing_diario_soja_2016.rds")
+saveRDS(pricing_diario_maiz_2016, "Shiny/Data/pricing_diario_maiz_2016.rds")
+saveRDS(pricing_diario_trigo_2016, "Shiny/Data/pricing_diario_trigo_2016.rds")
+saveRDS(pricing_diario_girasol_2016, "Shiny/Data/pricing_diario_girasol_2016.rds")
+saveRDS(pricing_diario_sorgo_2016, "Shiny/Data/pricing_diario_sorgo_2016.rds")
+saveRDS(pricing_diario_cebada_2016, "Shiny/Data/pricing_diario_cebada_2016.rds")
+saveRDS(pricing_diario_total_2016, "Shiny/Data/pricing_diario_total_2016.rds")
 
 # Pricing diario de granos 2017 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -995,6 +1008,13 @@ pricing_diario_total_2017 <- pricing_diario_total_2017 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2017, "Shiny/Data/pricing_diario_soja_2017.rds")
+saveRDS(pricing_diario_maiz_2017, "Shiny/Data/pricing_diario_maiz_2017.rds")
+saveRDS(pricing_diario_trigo_2017, "Shiny/Data/pricing_diario_trigo_2017.rds")
+saveRDS(pricing_diario_girasol_2017, "Shiny/Data/pricing_diario_girasol_2017.rds")
+saveRDS(pricing_diario_sorgo_2017, "Shiny/Data/pricing_diario_sorgo_2017.rds")
+saveRDS(pricing_diario_cebada_2017, "Shiny/Data/pricing_diario_cebada_2017.rds")
+saveRDS(pricing_diario_total_2017, "Shiny/Data/pricing_diario_total_2017.rds")
 
 # Pricing diario de granos 2018 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -1328,6 +1348,13 @@ pricing_diario_total_2018 <- pricing_diario_total_2018 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2018, "Shiny/Data/pricing_diario_soja_2018.rds")
+saveRDS(pricing_diario_maiz_2018, "Shiny/Data/pricing_diario_maiz_2018.rds")
+saveRDS(pricing_diario_trigo_2018, "Shiny/Data/pricing_diario_trigo_2018.rds")
+saveRDS(pricing_diario_girasol_2018, "Shiny/Data/pricing_diario_girasol_2018.rds")
+saveRDS(pricing_diario_sorgo_2018, "Shiny/Data/pricing_diario_sorgo_2018.rds")
+saveRDS(pricing_diario_cebada_2018, "Shiny/Data/pricing_diario_cebada_2018.rds")
+saveRDS(pricing_diario_total_2018, "Shiny/Data/pricing_diario_total_2018.rds")
 
 # Pricing diario de granos 2019 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -1661,6 +1688,13 @@ pricing_diario_total_2019 <- pricing_diario_total_2019 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2019, "Shiny/Data/pricing_diario_soja_2019.rds")
+saveRDS(pricing_diario_maiz_2019, "Shiny/Data/pricing_diario_maiz_2019.rds")
+saveRDS(pricing_diario_trigo_2019, "Shiny/Data/pricing_diario_trigo_2019.rds")
+saveRDS(pricing_diario_girasol_2019, "Shiny/Data/pricing_diario_girasol_2019.rds")
+saveRDS(pricing_diario_sorgo_2019, "Shiny/Data/pricing_diario_sorgo_2019.rds")
+saveRDS(pricing_diario_cebada_2019, "Shiny/Data/pricing_diario_cebada_2019.rds")
+saveRDS(pricing_diario_total_2019, "Shiny/Data/pricing_diario_total_2019.rds")
 
 # Pricing diario de granos 2020 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -1994,6 +2028,13 @@ pricing_diario_total_2020 <- pricing_diario_total_2020 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2020, "Shiny/Data/pricing_diario_soja_2020.rds")
+saveRDS(pricing_diario_maiz_2020, "Shiny/Data/pricing_diario_maiz_2020.rds")
+saveRDS(pricing_diario_trigo_2020, "Shiny/Data/pricing_diario_trigo_2020.rds")
+saveRDS(pricing_diario_girasol_2020, "Shiny/Data/pricing_diario_girasol_2020.rds")
+saveRDS(pricing_diario_sorgo_2020, "Shiny/Data/pricing_diario_sorgo_2020.rds")
+saveRDS(pricing_diario_cebada_2020, "Shiny/Data/pricing_diario_cebada_2020.rds")
+saveRDS(pricing_diario_total_2020, "Shiny/Data/pricing_diario_total_2020.rds")
 
 # Pricing diario de granos 2021 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -2327,6 +2368,13 @@ pricing_diario_total_2021 <- pricing_diario_total_2021 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2021, "Shiny/Data/pricing_diario_soja_2021.rds")
+saveRDS(pricing_diario_maiz_2021, "Shiny/Data/pricing_diario_maiz_2021.rds")
+saveRDS(pricing_diario_trigo_2021, "Shiny/Data/pricing_diario_trigo_2021.rds")
+saveRDS(pricing_diario_girasol_2021, "Shiny/Data/pricing_diario_girasol_2021.rds")
+saveRDS(pricing_diario_sorgo_2021, "Shiny/Data/pricing_diario_sorgo_2021.rds")
+saveRDS(pricing_diario_cebada_2021, "Shiny/Data/pricing_diario_cebada_2021.rds")
+saveRDS(pricing_diario_total_2021, "Shiny/Data/pricing_diario_total_2021.rds")
 
 # Pricing diario de granos 2022 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -2660,6 +2708,14 @@ pricing_diario_total_2022 <- pricing_diario_total_2022 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2022, "Shiny/Data/pricing_diario_soja_2022.rds")
+saveRDS(pricing_diario_maiz_2022, "Shiny/Data/pricing_diario_maiz_2022.rds")
+saveRDS(pricing_diario_trigo_2022, "Shiny/Data/pricing_diario_trigo_2022.rds")
+saveRDS(pricing_diario_girasol_2022, "Shiny/Data/pricing_diario_girasol_2022.rds")
+saveRDS(pricing_diario_sorgo_2022, "Shiny/Data/pricing_diario_sorgo_2022.rds")
+saveRDS(pricing_diario_cebada_2022, "Shiny/Data/pricing_diario_cebada_2022.rds")
+saveRDS(pricing_diario_total_2022, "Shiny/Data/pricing_diario_total_2022.rds")
+
 # Pricing diario de granos 2023 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
 
@@ -2991,6 +3047,14 @@ pricing_diario_total_2023 <- pricing_diario_total_2023 %>%
          TRIGO = if_else(is.na(TRIGO), 0, TRIGO),
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
+
+saveRDS(pricing_diario_soja_2023, "Shiny/Data/pricing_diario_soja_2023.rds")
+saveRDS(pricing_diario_maiz_2023, "Shiny/Data/pricing_diario_maiz_2023.rds")
+saveRDS(pricing_diario_trigo_2023, "Shiny/Data/pricing_diario_trigo_2023.rds")
+saveRDS(pricing_diario_girasol_2023, "Shiny/Data/pricing_diario_girasol_2023.rds")
+saveRDS(pricing_diario_sorgo_2023, "Shiny/Data/pricing_diario_sorgo_2023.rds")
+saveRDS(pricing_diario_cebada_2023, "Shiny/Data/pricing_diario_cebada_2023.rds")
+saveRDS(pricing_diario_total_2023, "Shiny/Data/pricing_diario_total_2023.rds")
 
 # Pricing diario de granos 2024 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -3324,6 +3388,13 @@ pricing_diario_total_2024 <- pricing_diario_total_2024 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2024, "Shiny/Data/pricing_diario_soja_2024.rds")
+saveRDS(pricing_diario_maiz_2024, "Shiny/Data/pricing_diario_maiz_2024.rds")
+saveRDS(pricing_diario_trigo_2024, "Shiny/Data/pricing_diario_trigo_2024.rds")
+saveRDS(pricing_diario_girasol_2024, "Shiny/Data/pricing_diario_girasol_2024.rds")
+saveRDS(pricing_diario_sorgo_2024, "Shiny/Data/pricing_diario_sorgo_2024.rds")
+saveRDS(pricing_diario_cebada_2024, "Shiny/Data/pricing_diario_cebada_2024.rds")
+saveRDS(pricing_diario_total_2024, "Shiny/Data/pricing_diario_total_2024.rds")
 
 # Pricing diario de granos 2025 ------------------------------------------------
 ## SOJA ------------------------------------------------------------------------
@@ -3657,6 +3728,13 @@ pricing_diario_total_2025 <- pricing_diario_total_2025 %>%
          TOTAL = CEBADA + GIRASOL + MAIZ + SOJA + SORGO + TRIGO) %>% 
   arrange(FECHA_OPERACION)
 
+saveRDS(pricing_diario_soja_2025, "Shiny/Data/pricing_diario_soja_2025.rds")
+saveRDS(pricing_diario_maiz_2025, "Shiny/Data/pricing_diario_maiz_2025.rds")
+saveRDS(pricing_diario_trigo_2025, "Shiny/Data/pricing_diario_trigo_2025.rds")
+saveRDS(pricing_diario_girasol_2025, "Shiny/Data/pricing_diario_girasol_2025.rds")
+saveRDS(pricing_diario_sorgo_2025, "Shiny/Data/pricing_diario_sorgo_2025.rds")
+saveRDS(pricing_diario_cebada_2025, "Shiny/Data/pricing_diario_cebada_2025.rds")
+saveRDS(pricing_diario_total_2025, "Shiny/Data/pricing_diario_total_2025.rds")
 
 # Histórico --------------------------------------------------------------------
 
@@ -3676,6 +3754,8 @@ pricing_diario_historico_soja <- bind_rows(pricing_diario_soja_2015,
 write_xlsx(pricing_diario_historico_soja,
            "Datos limpios/Pricing diario/Histórico/Soja.xlsx")
 
+saveRDS(pricing_diario_historico_soja, "Shiny/Data/pricing_diario_historico_soja.rds")
+
 ## MAIZ ------------------------------------------------------------------------
 pricing_diario_historico_maiz <- bind_rows(pricing_diario_maiz_2015,
                                            pricing_diario_maiz_2016,
@@ -3691,6 +3771,8 @@ pricing_diario_historico_maiz <- bind_rows(pricing_diario_maiz_2015,
 
 write_xlsx(pricing_diario_historico_maiz,
            "Datos limpios/Pricing diario/Histórico/Maiz.xlsx")
+
+saveRDS(pricing_diario_historico_maiz, "Shiny/Data/pricing_diario_historico_maiz.rds")
 
 ## TRIGO -----------------------------------------------------------------------
 pricing_diario_historico_trigo <- bind_rows(pricing_diario_trigo_2015,
@@ -3708,6 +3790,8 @@ pricing_diario_historico_trigo <- bind_rows(pricing_diario_trigo_2015,
 write_xlsx(pricing_diario_historico_trigo,
            "Datos limpios/Pricing diario/Histórico/Trigo.xlsx")
 
+saveRDS(pricing_diario_historico_trigo, "Shiny/Data/pricing_diario_historico_trigo.rds")
+
 ## GIRASOL ---------------------------------------------------------------------
 pricing_diario_historico_girasol <- bind_rows(pricing_diario_girasol_2015,
                                               pricing_diario_girasol_2016,
@@ -3723,6 +3807,8 @@ pricing_diario_historico_girasol <- bind_rows(pricing_diario_girasol_2015,
 
 write_xlsx(pricing_diario_historico_girasol,
            "Datos limpios/Pricing diario/Histórico/Girasol.xlsx")
+
+saveRDS(pricing_diario_historico_girasol, "Shiny/Data/pricing_diario_historico_girasol.rds")
 
 ## CEBADA ----------------------------------------------------------------------
 pricing_diario_historico_cebada <- bind_rows(pricing_diario_cebada_2015,
@@ -3740,6 +3826,7 @@ pricing_diario_historico_cebada <- bind_rows(pricing_diario_cebada_2015,
 write_xlsx(pricing_diario_historico_cebada,
            "Datos limpios/Pricing diario/Histórico/Cebada.xlsx")
 
+saveRDS(pricing_diario_historico_cebada, "Shiny/Data/pricing_diario_historico_cebada.rds")
 
 ## SORGO -----------------------------------------------------------------------
 pricing_diario_historico_sorgo <- bind_rows(pricing_diario_sorgo_2015,
@@ -3757,6 +3844,8 @@ pricing_diario_historico_sorgo <- bind_rows(pricing_diario_sorgo_2015,
 write_xlsx(pricing_diario_historico_sorgo,
            "Datos limpios/Pricing diario/Histórico/Sorgo.xlsx")
 
+saveRDS(pricing_diario_historico_girasol, "Shiny/Data/pricing_diario_historico_sorgo.rds")
+
 ## TOTAL -----------------------------------------------------------------------
 pricing_diario_historico <- bind_rows(pricing_diario_total_2015,
                                       pricing_diario_total_2016,
@@ -3769,6 +3858,8 @@ pricing_diario_historico <- bind_rows(pricing_diario_total_2015,
                                       pricing_diario_total_2023,
                                       pricing_diario_total_2024,
                                       pricing_diario_total_2025)
+
+saveRDS(pricing_diario_historico, "Shiny/Data/pricing_diario_historico.rds")
 
 # GUARDO LOS DATOS -------------------------------------------------------------
 

@@ -10,20 +10,28 @@ girasol, cebada y sorgo). Los datos se obtienen a través de la plataforma **SIO
 *sistema unificado de información obligatoria* de las operaciones de compraventa de granos que 
 conforman el mercado físico.
 
+También busca poder monitorear de dónde proviene la producción de cada cultivo según la campaña. Los datos 
+se descargan de la **Secretaría de Agricultura, Ganadería y Pesca**.
+
 
 ### Fuente de datos
 
-* **Origen:** los datos mensuales se obtienen de la página web de [SIO Granos](https://www.siogranos.com.ar/Consulta_publica/operaciones_informadas_exportar.aspx),
-seleccionando en "Fecha Declaración en SioGranos" el primer y último día del mes a exportar.
-* **Frecuencia de actualización:** los datos se actualizarán semanalmente, incorporando información
-del mes en curso y actualizando los dos meses previos, ya que la información reciente puede 
-sufrir ligeras modificaciones.
+* **Origen:** los datos mensuales de pricing de granos se obtienen de la página web 
+de [SIO Granos](https://www.siogranos.com.ar/Consulta_publica/operaciones_informadas_exportar.aspx),
+seleccionando en "Fecha Declaración en SioGranos" el primer y último día del mes a exportar. Por su parte,
+los datos del origen de la producción, se obtienen de la página de
+[SAGyP](https://datosestimaciones.magyp.gob.ar/reportes.php?reporte=Estimaciones).
+* **Frecuencia de actualización:** los datos de pricing se actualizarán semanalmente, incorporando información
+del mes en curso y actualizando los dos meses previos, ya que la información reciente puede sufrir ligeras 
+modificaciones. Los datos de estimaciones de actualizan cada un mes, para contemplar la actualización de las
+estimaciones.
 
 ## Proceso de actualización
 
-Paso 1: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos".
-Paso 2: correr los scripts **en el orden que están enumerados**.
-Paso 3: 
+Paso 1: cargar los datos provenientes de SIO Granos en la carpeta denominada "Datos crudos", en el mismo formato
+de los demás meses.
+Paso 2: cargar los datos provenientes de la página de SAGyP en la carpeta "Mapa" con el mismo nombre.
+Paso 3: correr los scripts **en el orden que están enumerados**.
 
 
 ## Salidas
@@ -32,5 +40,8 @@ Paso 3:
 se exportan en formato **xlsx** en la carpeta "Datos limpios". Los mismos se separan en carpetas por
 año, incluyendo archivos históricos para cada grano. Para calcular el pricing, se tienen en cuenta 
 únicamente las operaciones finales.
-* Gráficos:
+* Tablero: se genera un tablero shiny para monitorear los datos de pricing y origen de la producción, donde
+se pueden observar tanto datos números como gráficos de seguimiento.
+
+***ADVERTENCIA***: la carga del mapa en shiny funciona lento por la gran cantidad de departamentos.
 
