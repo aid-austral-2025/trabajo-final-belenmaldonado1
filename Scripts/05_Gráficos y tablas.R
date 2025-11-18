@@ -1,5 +1,4 @@
 # Gráficos pricing diario por producto -----------------------------------------
-
 funcion_grafico_diario_producto <- function(p, y) {
   
   datos_seleccionados <- get(paste0("pricing_diario_", p, "_", y)) %>%
@@ -60,7 +59,6 @@ funcion_grafico_diario_producto <- function(p, y) {
 }
 
 # Gráficos pricing diario todos los productos ----------------------------------
-
 funcion_grafico_diario_total <- function(y) {
   
   datos_seleccionados <- get(paste0("pricing_diario_total_", y)) %>%
@@ -109,7 +107,6 @@ funcion_grafico_diario_total <- function(y) {
 }
 
 # Gráficos pricing semanal por producto ----------------------------------------
-
 funcion_grafico_semanal_producto <- function(p, y) {
   
   datos_seleccionados <- get(paste0("pricing_semanal_", p, "_", y)) %>%
@@ -167,7 +164,6 @@ funcion_grafico_semanal_producto <- function(p, y) {
 }
 
 # Gráficos pricing semanal todos los productos ---------------------------------
-
 funcion_grafico_semanal_total <- function(y) {
   
   datos_seleccionados <- get(paste0("pricing_semanal_total_", y)) %>%
@@ -214,7 +210,6 @@ funcion_grafico_semanal_total <- function(y) {
 }
 
 # Mapa -------------------------------------------------------------------------
-
 funcion_grafico_mapa <- function(x, y) {
   colores <- switch(x,
                     "soja" = c("#C4D79B", "#375623"),

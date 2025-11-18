@@ -27,10 +27,6 @@ produccion <- produccion %>%
            DEPARTAMENTO) %>% 
   summarise(TONELADAS = sum(TONELADAS), .groups = "drop")
 
-saveRDS(pricing_diario_historico, "Shiny/Data/pricing_diario_historico.rds")
-
-saveRDS(produccion, "Shiny/Data/produccion.rds")
-
 # Mapa -------------------------------------------------------------------------
 mapa <- read_sf(dsn = "Mapa",
                 layer = "departamento") %>% 
@@ -67,5 +63,3 @@ mapa <- read_sf(dsn = "Mapa",
                                TRUE ~ PROVINCIA)) %>% 
   mutate(DEPARTAMENTO = str_to_upper(DEPARTAMENTO),
          DEPARTAMENTO = chartr("ÁÉÍÓÚÑ", "AEIOUN", DEPARTAMENTO))
-
-saveRDS(mapa, "Shiny/Data/mapa.rds")
