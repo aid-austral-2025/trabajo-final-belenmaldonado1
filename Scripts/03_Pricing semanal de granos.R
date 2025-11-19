@@ -4426,3 +4426,113 @@ write_xlsx(pricing_semanal_historico_girasol, "Datos limpios/Pricing semanal/His
 write_xlsx(pricing_semanal_historico_cebada, "Datos limpios/Pricing semanal/Histórico/Cebada.xlsx")
 write_xlsx(pricing_semanal_historico_sorgo, "Datos limpios/Pricing semanal/Histórico/Sorgo.xlsx")
 write_xlsx(pricing_semanal_historico, "Datos limpios/Pricing semanal/Histórico/Pricing semanal histórico.xlsx")
+
+
+# GUARDO LOS DATOS PARA SHINY --------------------------------------------------
+## 2015 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2015, "Shiny/Datos limpios/pricing_semanal_cebada_2015.xlsx")
+write_xlsx(pricing_semanal_girasol_2015, "Shiny/Datos limpios/pricing_semanal_girasol_2015.xlsx")
+write_xlsx(pricing_semanal_maiz_2015, "Shiny/Datos limpios/pricing_semanal_maiz_2015.xlsx")
+write_xlsx(pricing_semanal_soja_2015, "Shiny/Datos limpios/pricing_semanal_soja_2015.xlsx")
+write_xlsx(pricing_semanal_sorgo_2015, "Shiny/Datos limpios/pricing_semanal_sorgo_2015.xlsx")
+write_xlsx(pricing_semanal_trigo_2015, "Shiny/Datos limpios/pricing_semanal_trigo_2015.xlsx")
+write_xlsx(pricing_semanal_total_2015, "Shiny/Datos limpios/pricing_semanal_total_2015.xlsx")
+
+## 2016 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2016, "Shiny/Datos limpios/pricing_semanal_cebada_2016.xlsx")
+write_xlsx(pricing_semanal_girasol_2016, "Shiny/Datos limpios/pricing_semanal_girasol_2016.xlsx")
+write_xlsx(pricing_semanal_maiz_2016, "Shiny/Datos limpios/pricing_semanal_maiz_2016.xlsx")
+write_xlsx(pricing_semanal_soja_2016, "Shiny/Datos limpios/pricing_semanal_soja_2016.xlsx")
+write_xlsx(pricing_semanal_sorgo_2016, "Shiny/Datos limpios/pricing_semanal_sorgo_2016.xlsx")
+write_xlsx(pricing_semanal_trigo_2016, "Shiny/Datos limpios/pricing_semanal_trigo_2016.xlsx")
+write_xlsx(pricing_semanal_total_2016, "Shiny/Datos limpios/pricing_semanal_total_2016.xlsx")
+
+## 2017 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2017, "Shiny/Datos limpios/pricing_semanal_cebada_2017.xlsx")
+write_xlsx(pricing_semanal_girasol_2017, "Shiny/Datos limpios/pricing_semanal_girasol_2017.xlsx")
+write_xlsx(pricing_semanal_maiz_2017, "Shiny/Datos limpios/pricing_semanal_maiz_2017.xlsx")
+write_xlsx(pricing_semanal_soja_2017, "Shiny/Datos limpios/pricing_semanal_soja_2017.xlsx")
+write_xlsx(pricing_semanal_sorgo_2017, "Shiny/Datos limpios/pricing_semanal_sorgo_2017.xlsx")
+write_xlsx(pricing_semanal_trigo_2017, "Shiny/Datos limpios/pricing_semanal_trigo_2017.xlsx")
+write_xlsx(pricing_semanal_total_2017, "Shiny/Datos limpios/pricing_semanal_total_2017.xlsx")
+
+## 2018 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2018, "Shiny/Datos limpios/pricing_semanal_cebada_2018.xlsx")
+write_xlsx(pricing_semanal_girasol_2018, "Shiny/Datos limpios/pricing_semanal_girasol_2018.xlsx")
+write_xlsx(pricing_semanal_maiz_2018, "Shiny/Datos limpios/pricing_semanal_maiz_2018.xlsx")
+write_xlsx(pricing_semanal_soja_2018, "Shiny/Datos limpios/pricing_semanal_soja_2018.xlsx")
+write_xlsx(pricing_semanal_sorgo_2018, "Shiny/Datos limpios/pricing_semanal_sorgo_2018.xlsx")
+write_xlsx(pricing_semanal_trigo_2018, "Shiny/Datos limpios/pricing_semanal_trigo_2018.xlsx")
+write_xlsx(pricing_semanal_total_2018, "Shiny/Datos limpios/pricing_semanal_total_2018.xlsx")
+
+## 2019 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2019, "Shiny/Datos limpios/pricing_semanal_cebada_2019.xlsx")
+write_xlsx(pricing_semanal_girasol_2019, "Shiny/Datos limpios/pricing_semanal_girasol_2019.xlsx")
+write_xlsx(pricing_semanal_maiz_2019, "Shiny/Datos limpios/pricing_semanal_maiz_2019.xlsx")
+write_xlsx(pricing_semanal_soja_2019, "Shiny/Datos limpios/pricing_semanal_soja_2019.xlsx")
+write_xlsx(pricing_semanal_sorgo_2019, "Shiny/Datos limpios/pricing_semanal_sorgo_2019.xlsx")
+write_xlsx(pricing_semanal_trigo_2019, "Shiny/Datos limpios/pricing_semanal_trigo_2019.xlsx")
+write_xlsx(pricing_semanal_total_2019, "Shiny/Datos limpios/pricing_semanal_total_2019.xlsx")
+
+## 2020 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2020, "Shiny/Datos limpios/pricing_semanal_cebada_2020.xlsx")
+write_xlsx(pricing_semanal_girasol_2020, "Shiny/Datos limpios/pricing_semanal_girasol_2020.xlsx")
+write_xlsx(pricing_semanal_maiz_2020, "Shiny/Datos limpios/pricing_semanal_maiz_2020.xlsx")
+write_xlsx(pricing_semanal_soja_2020, "Shiny/Datos limpios/pricing_semanal_soja_2020.xlsx")
+write_xlsx(pricing_semanal_sorgo_2020, "Shiny/Datos limpios/pricing_semanal_sorgo_2020.xlsx")
+write_xlsx(pricing_semanal_trigo_2020, "Shiny/Datos limpios/pricing_semanal_trigo_2020.xlsx")
+write_xlsx(pricing_semanal_total_2020, "Shiny/Datos limpios/pricing_semanal_total_2020.xlsx")
+
+## 2021 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2021, "Shiny/Datos limpios/pricing_semanal_cebada_2021.xlsx")
+write_xlsx(pricing_semanal_girasol_2021, "Shiny/Datos limpios/pricing_semanal_girasol_2021.xlsx")
+write_xlsx(pricing_semanal_maiz_2021, "Shiny/Datos limpios/pricing_semanal_maiz_2021.xlsx")
+write_xlsx(pricing_semanal_soja_2021, "Shiny/Datos limpios/pricing_semanal_soja_2021.xlsx")
+write_xlsx(pricing_semanal_sorgo_2021, "Shiny/Datos limpios/pricing_semanal_sorgo_2021.xlsx")
+write_xlsx(pricing_semanal_trigo_2021, "Shiny/Datos limpios/pricing_semanal_trigo_2021.xlsx")
+write_xlsx(pricing_semanal_total_2021, "Shiny/Datos limpios/pricing_semanal_total_2021.xlsx")
+
+## 2022 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2022, "Shiny/Datos limpios/pricing_semanal_cebada_2022.xlsx")
+write_xlsx(pricing_semanal_girasol_2022, "Shiny/Datos limpios/pricing_semanal_girasol_2022.xlsx")
+write_xlsx(pricing_semanal_maiz_2022, "Shiny/Datos limpios/pricing_semanal_maiz_2022.xlsx")
+write_xlsx(pricing_semanal_soja_2022, "Shiny/Datos limpios/pricing_semanal_soja_2022.xlsx")
+write_xlsx(pricing_semanal_sorgo_2022, "Shiny/Datos limpios/pricing_semanal_sorgo_2022.xlsx")
+write_xlsx(pricing_semanal_trigo_2022, "Shiny/Datos limpios/pricing_semanal_trigo_2022.xlsx")
+write_xlsx(pricing_semanal_total_2022, "Shiny/Datos limpios/pricing_semanal_total_2022.xlsx")
+
+## 2023 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2023, "Shiny/Datos limpios/pricing_semanal_cebada_2023.xlsx")
+write_xlsx(pricing_semanal_girasol_2023, "Shiny/Datos limpios/pricing_semanal_girasol_2023.xlsx")
+write_xlsx(pricing_semanal_maiz_2023, "Shiny/Datos limpios/pricing_semanal_maiz_2023.xlsx")
+write_xlsx(pricing_semanal_soja_2023, "Shiny/Datos limpios/pricing_semanal_soja_2023.xlsx")
+write_xlsx(pricing_semanal_sorgo_2023, "Shiny/Datos limpios/pricing_semanal_sorgo_2023.xlsx")
+write_xlsx(pricing_semanal_trigo_2023, "Shiny/Datos limpios/pricing_semanal_trigo_2023.xlsx")
+write_xlsx(pricing_semanal_total_2023, "Shiny/Datos limpios/pricing_semanal_total_2023.xlsx")
+
+## 2024 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2024, "Shiny/Datos limpios/pricing_semanal_cebada_2024.xlsx")
+write_xlsx(pricing_semanal_girasol_2024, "Shiny/Datos limpios/pricing_semanal_girasol_2024.xlsx")
+write_xlsx(pricing_semanal_maiz_2024, "Shiny/Datos limpios/pricing_semanal_maiz_2024.xlsx")
+write_xlsx(pricing_semanal_soja_2024, "Shiny/Datos limpios/pricing_semanal_soja_2024.xlsx")
+write_xlsx(pricing_semanal_sorgo_2024, "Shiny/Datos limpios/pricing_semanal_sorgo_2024.xlsx")
+write_xlsx(pricing_semanal_trigo_2024, "Shiny/Datos limpios/pricing_semanal_trigo_2024.xlsx")
+write_xlsx(pricing_semanal_total_2024, "Shiny/Datos limpios/pricing_semanal_total_2024.xlsx")
+
+## 2025 ------------------------------------------------------------------------
+write_xlsx(pricing_semanal_cebada_2025, "Shiny/Datos limpios/pricing_semanal_cebada_2025.xlsx")
+write_xlsx(pricing_semanal_girasol_2025, "Shiny/Datos limpios/pricing_semanal_girasol_2025.xlsx")
+write_xlsx(pricing_semanal_maiz_2025, "Shiny/Datos limpios/pricing_semanal_maiz_2025.xlsx")
+write_xlsx(pricing_semanal_soja_2025, "Shiny/Datos limpios/pricing_semanal_soja_2025.xlsx")
+write_xlsx(pricing_semanal_sorgo_2025, "Shiny/Datos limpios/pricing_semanal_sorgo_2025.xlsx")
+write_xlsx(pricing_semanal_trigo_2025, "Shiny/Datos limpios/pricing_semanal_trigo_2025.xlsx")
+write_xlsx(pricing_semanal_total_2025, "Shiny/Datos limpios/pricing_semanal_total_2025.xlsx")
+
+## Histórico -------------------------------------------------------------------
+write_xlsx(pricing_semanal_historico_soja, "Shiny/Datos limpios/pricing_semanal_historico_soja.xlsx")
+write_xlsx(pricing_semanal_historico_maiz, "Shiny/Datos limpios/pricing_semanal_historico_maiz.xlsx")
+write_xlsx(pricing_semanal_historico_trigo, "Shiny/Datos limpios/pricing_semanal_historico_trigo.xlsx")
+write_xlsx(pricing_semanal_historico_girasol, "Shiny/Datos limpios/pricing_semanal_historico_girasol.xlsx")
+write_xlsx(pricing_semanal_historico_cebada, "Shiny/Datos limpios/pricing_semanal_historico_cebada.xlsx")
+write_xlsx(pricing_semanal_historico_sorgo, "Shiny/Datos limpios/pricing_semanal_historico_sorgo.xlsx")
+write_xlsx(pricing_semanal_historico, "Shiny/Datos limpios/pricing_semanal_historico.xlsx")

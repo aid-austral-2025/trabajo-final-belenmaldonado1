@@ -1,12 +1,10 @@
 name: AID2025
-title: AID2025
+title:
 username: belenmaldonado
 account: belenmaldonado
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
-appId: 16080646
-bundleId:
+appId: 16108261
+bundleId: 11198417
 url: https://belenmaldonado.shinyapps.io/AID2025/
 version: 1
-asMultiple: FALSE
-asStatic: FALSE
