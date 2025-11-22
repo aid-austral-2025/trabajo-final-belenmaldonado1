@@ -1,5 +1,4 @@
 # Librerías a utilizar ---------------------------------------------------------
-
 library(dplyr)
 library(lubridate)
 library(readr)
@@ -15,3 +14,4 @@ library(DT)
 library(sf)
 library(leaflet)
 library(spData)
+library(leaflet)

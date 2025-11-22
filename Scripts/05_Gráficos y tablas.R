@@ -210,7 +210,7 @@ funcion_grafico_semanal_total <- function(y) {
 }
 
 # Mapa -------------------------------------------------------------------------
-funcion_grafico_mapa <- function(x, y) {
+funcion_grafico_mapa <- function(x, y, z) {
   colores <- switch(x,
                     "soja" = c("#C4D79B", "#375623"),
                     "maiz" = c("#FABF8F", "#833C0C"),
@@ -221,20 +221,33 @@ funcion_grafico_mapa <- function(x, y) {
                     c("#808080", "#0D0D0D"))
   
   datos_seleccionados <- produccion %>%
-    filter(CULTIVO == x, COSECHA == y)
+    filter(CULTIVO == x, COSECHA == y, PROVINCIA == z)
   
   mapa_cultivo <- mapa %>%
     left_join(datos_seleccionados, by = c("DEPARTAMENTO", "PROVINCIA")) %>%
-    filter(!PROVINCIA %in% c("CHUBUT", "SANTA CRUZ", "TIERRA DEL FUEGO")) %>%
-    mutate(fill_val = ifelse(TONELADAS == 0, NA, TONELADAS))
+    filter(PROVINCIA == z) %>%
+    mutate(TONELADAS = ifelse(TONELADAS == 0, NA, TONELADAS))
   
-  grafico <- ggplot(mapa_cultivo) +
-    geom_sf(aes(fill = fill_val, text = paste("Departamento:", DEPARTAMENTO,
-                                              "\nProvincia:", PROVINCIA,
-                                              "\nToneladas:", format(TONELADAS, big.mark = ".", decimal.mark = ",")))) +
-    scale_fill_gradient(low = colores[1], high = colores[2], na.value = "white", 
-                        name = "Toneladas") +
-    theme_bw()
+  # Si no hay datos, forzamos todo a NA para que la paleta funcione y quede blanco
+  hay_datos <- any(!is.na(mapa_cultivo$TONELADAS))
+  
+  paleta_colores <- colorNumeric(
+    palette = c(colores[1], colores[2]),
+    domain = if(hay_datos) mapa_cultivo$TONELADAS else c(0, 1),
+    na.color = "white"
+  )
+  
+  grafico <- leaflet(mapa_cultivo) %>%
+    addPolygons(fillColor = ~paleta_colores(TONELADAS),
+                weight = 1,
+                opacity = 1, 
+                color = "black",
+                fillOpacity = 0.8,
+                label = ~paste0(DEPARTAMENTO, ", Toneladas: ", 
+                                ifelse(is.na(TONELADAS), "0", 
+                                       format(TONELADAS, big.mark = ".", decimal.mark = ",")))) %>%
+    addLegend(pal = paleta_colores, values = ~TONELADAS, 
+              title = "Toneladas", position = "bottomright")
   
   return(grafico)
   

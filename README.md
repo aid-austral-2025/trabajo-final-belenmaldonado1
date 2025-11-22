@@ -41,6 +41,7 @@ se exportan en formato **xlsx** en la carpeta "Datos limpios". Los mismos se sep
 año, incluyendo archivos históricos para cada grano. Para calcular el pricing, se tienen en cuenta 
 únicamente las operaciones finales.
 * Tablero: se genera un tablero shiny para monitorear los datos de pricing y origen de la producción, donde
-se pueden observar tanto datos númericos como gráficos de seguimiento.
+se pueden observar tanto datos númericos como gráficos de seguimiento. Se puede acceder al tablero a través
+del siguiente [LINK](https://belenmaldonado.shinyapps.io/AID2025/).
 
 ***ADVERTENCIA***: la carga del mapa en shiny funciona lento por la gran cantidad de departamentos.

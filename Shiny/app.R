@@ -2,8 +2,6 @@
 library(dplyr)
 library(lubridate)
 library(readr)
-library(readxl)
-library(tidyverse)
 library(ggplot2)
 library(plotly)
 library(scales)
@@ -13,10 +11,10 @@ library(shinythemes)
 library(DT)
 library(sf)
 library(leaflet)
-library(spData)
 library(tools)
-library(units)
-library(Rcpp)
+library(readxl)
+library(tidyverse)
+library(leaflet)
 
 # Pricing diario y semanal -----------------------------------------------------
 ruta <- "Datos limpios/"
@@ -63,7 +61,7 @@ produccion <- produccion %>%
            DEPARTAMENTO) %>% 
   summarise(TONELADAS = sum(TONELADAS), .groups = "drop")
 
-## Mapa ------------------------------------------------------------------------
+# Mapa -------------------------------------------------------------------------
 mapa <- read_sf(dsn = "Mapa",
                 layer = "departamento") %>% 
   rename(DEPARTAMENTO = nam,
@@ -77,12 +75,13 @@ mapa <- read_sf(dsn = "Mapa",
                                PROVINCIA == "IDE Chaco" ~ "CHACO",
                                PROVINCIA == "IDE Mendoza" ~ "MENDOZA",
                                PROVINCIA == "ARBA - Gerencia de Servicios Catastrales" ~ "BUENOS AIRES",
-                               PROVINCIA == "Direc. Grl. de Inmuebles" ~ "JUJUY",
+                               PROVINCIA == "Direc. Grl. de Inmuebles" & str_starts(in1, "38") ~ "JUJUY",
+                               PROVINCIA == "Direc. Grl. de Inmuebles" & str_starts(in1, "66") ~ "SALTA",
                                PROVINCIA == "ATER - Direc. de Catastro" ~ "ENTRE RIOS",
                                PROVINCIA == "SCAR" ~ "TIERRA DEL FUEGO",
                                PROVINCIA == "Ministerio de Ecología" ~ "MISIONES",
                                PROVINCIA == "Gerencia de Catastro Pcial." ~ "TIERRA DEL FUEGO",
-                               PROVINCIA == "Direc. Pcial. de Catastro y Cartografía" ~ "BUENOS AIRES",
+                               PROVINCIA == "Direc. Pcial. de Catastro y Cartografía" ~ "CHACO",
                                PROVINCIA == "Direc. de Geodesia y Catastro" ~ "SAN LUIS",
                                PROVINCIA == "Servicio de Catastro e Información Territorial" ~ "SANTA FE",
                                PROVINCIA == "Direc. Pcial. de Catastro e Inf. Territorial" ~ "NEUQUEN",
@@ -313,7 +312,7 @@ funcion_grafico_semanal_total <- function(y) {
 }
 
 ## Mapa ------------------------------------------------------------------------
-funcion_grafico_mapa <- function(x, y) {
+funcion_grafico_mapa <- function(x, y, z) {
   colores <- switch(x,
                     "soja" = c("#C4D79B", "#375623"),
                     "maiz" = c("#FABF8F", "#833C0C"),
@@ -324,20 +323,32 @@ funcion_grafico_mapa <- function(x, y) {
                     c("#808080", "#0D0D0D"))
   
   datos_seleccionados <- produccion %>%
-    filter(CULTIVO == x, COSECHA == y)
+    filter(CULTIVO == x, COSECHA == y, PROVINCIA == z)
   
   mapa_cultivo <- mapa %>%
     left_join(datos_seleccionados, by = c("DEPARTAMENTO", "PROVINCIA")) %>%
-    filter(!PROVINCIA %in% c("CHUBUT", "SANTA CRUZ", "TIERRA DEL FUEGO")) %>%
-    mutate(fill_val = ifelse(TONELADAS == 0, NA, TONELADAS))
+    filter(PROVINCIA == z) %>%
+    mutate(TONELADAS = ifelse(TONELADAS == 0, NA, TONELADAS))
   
-  grafico <- ggplot(mapa_cultivo) +
-    geom_sf(aes(fill = fill_val, text = paste("Departamento:", DEPARTAMENTO,
-                                              "\nProvincia:", PROVINCIA,
-                                              "\nToneladas:", format(TONELADAS, big.mark = ".", decimal.mark = ",")))) +
-    scale_fill_gradient(low = colores[1], high = colores[2], na.value = "white", 
-                        name = "Toneladas") +
-    theme_bw()
+  # Si no hay datos, forzamos todo a NA para que la paleta funcione y quede blanco
+  hay_datos <- any(!is.na(mapa_cultivo$TONELADAS))
+  
+  paleta_colores <- colorNumeric(
+    palette = c(colores[1], colores[2]),
+    domain = if(hay_datos) mapa_cultivo$TONELADAS else c(0, 1),
+    na.color = "white")
+  
+  grafico <- leaflet(mapa_cultivo) %>%
+    addPolygons(fillColor = ~paleta_colores(TONELADAS),
+                weight = 1,
+                opacity = 1, 
+                color = "black",
+                fillOpacity = 0.8,
+                label = ~paste0(DEPARTAMENTO, ", Toneladas: ", 
+                                ifelse(is.na(TONELADAS), "0", 
+                                       format(TONELADAS, big.mark = ".", decimal.mark = ",")))) %>%
+    addLegend(pal = paleta_colores, values = ~TONELADAS, 
+              title = "Toneladas", position = "bottomright")
   
   return(grafico)
   
@@ -349,6 +360,9 @@ frecuencia <- c("diario", "semanal")
 total <- c("por producto", "total")
 campania <- c("2015/16", "2016/17", "2017/18", "2018/19", "2019/20",
               "2020/21", "2021/22", "2022/23", "2023/24", "2024/25")
+provincia <- c("BUENOS AIRES", "CORDOBA", "ENTRE RIOS", "LA PAMPA", "SANTA FE",
+               "SANTIAGO DEL ESTERO", "TUCUMAN", "SAN LUIS", "SALTA", "CHACO", 
+               "FORMOSA", "CATAMARCA", "CORRIENTES", "JUJUY", "MISIONES")
 
 # Shiny ------------------------------------------------------------------------
 # interfaz del usuario
@@ -382,14 +396,6 @@ interfaz <- fluidPage(
                                                           ),
                             
                             pickerInput(
-                              inputId = "id_producto",
-                              label = "Producto",
-                              choices = producto,
-                              multiple = FALSE,
-                              options = list('live-search' = TRUE)
-                              ),
-                            
-                            pickerInput(
                               inputId = "id_frecuencia",
                               label = "Frecuencia",
                               choices = frecuencia,
@@ -403,7 +409,14 @@ interfaz <- fluidPage(
                               choices = total,
                               multiple = FALSE,
                               options = list('live-search' = TRUE)
-                              )
+                              ),
+                            
+                            pickerInput(
+                              inputId = "id_producto",
+                              label = "Producto",
+                              choices = producto,
+                              multiple = FALSE,
+                              options = list('live-search' = TRUE))
                             ),
                
                mainPanel(width = 9,
@@ -427,12 +440,19 @@ interfaz <- fluidPage(
                               label = "Campaña",
                               choices = campania,
                               multiple = FALSE,
-                              options = list('live-search' = TRUE)
-                              )
+                              options = list('live-search' = TRUE)),
+                            
+                            pickerInput(
+                              inputId = "id_provincia_origen",
+                              label = "Provincia",
+                              choices = provincia,
+                              multiple = FALSE,
+                              options = list('live-search' = TRUE))
+                            
                             ),
                
                mainPanel(width = 9,
-                         plotlyOutput("grafico_origen"))
+                         leafletOutput("grafico_origen"))
                )
              )
     )
@@ -444,6 +464,12 @@ servidor <- function(input, output) {
   year_reactivo <- reactive({input$id_year})
   
   producto_reactivo <- reactive({input$id_producto})
+  
+  producto_origen_reactivo <- reactive({input$id_producto_origen})
+  
+  campaña_origen_reactivo <- reactive({input$id_campaña_origen})
+  
+  provincia_origen_reactivo <- reactive({input$id_provincia_origen})
   
   output$grafico <- renderPlotly({
     
@@ -486,12 +512,13 @@ servidor <- function(input, output) {
     }
   })
   
-  output$grafico_origen <- renderPlotly({
+  output$grafico_origen <- renderLeaflet({
     
-    req(input$id_producto_origen, input$id_campaña_origen)
+    req(input$id_producto_origen, input$id_campaña_origen, input$id_provincia_origen)
     
-    ggplotly(funcion_grafico_mapa(input$id_producto_origen, input$id_campaña_origen), 
-             tooltip = "text")
+    funcion_grafico_mapa(input$id_producto_origen, input$id_campaña_origen,
+                         input$id_provincia_origen)
+    
     
   })
   
